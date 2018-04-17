@@ -1,5 +1,7 @@
 package java8.ex02;
 
+//gitpackage java8.ex02;
+
 import java8.data.Data;
 import java8.data.Person;
 import org.junit.Test;
@@ -21,6 +23,11 @@ public class Method_02_Test {
         // TODO créer une méthode String format()
         // TODO la méthode retourne une chaîne de la forme [<nb_personnes> persons]
         // TODO exemple de résultat : "[14 persons]", "[30 persons]"
+        
+        default String format() {
+        	int nombre = findAll().size();
+        	return nombre + "persons";
+        }
     }
     // end::IDao[]
 
@@ -33,7 +40,11 @@ public class Method_02_Test {
         public List<Person> findAll() {
             return people;
         }
-
+        
+        public String format() {
+        	int nombre = findAll().size();
+        	return "DaoA[" + nombre + " persons" + "]";
+        }
         // TODO redéfinir la méthode String format()
         // TODO la méthode retourne une chaîne de la forme DaoA[<nb_personnes> persons]
         // TODO exemple de résultat : "DaoA[14 persons]", "DaoA[30 persons]"
@@ -49,6 +60,7 @@ public class Method_02_Test {
 
         // TODO invoquer la méthode format() pour que le test soit passant
         String result = null;
+        result = daoA.format();
 
         assertThat(result, is("DaoA[20 persons]"));
     }
