@@ -18,12 +18,7 @@ public class Function_01_Test {
     /******** PART 1 - Integer -> Person *******/
 
     // tag::intToPerson[]
-    // TODO Compléter la définition de cette fonction
-    // TODO Cette fonction permet de transformer un entier en objet Person
-    // TODO le prenom sera de la forme "first_<ENTIER>"
-    // TODO le nom sera de la forme "last_<ENTIER>"
-    // TODO l'age sera de la forme "<ENTIER>"
-    // TODO le mot de passe sera de la forme "pass_<ENTIER>"
+
     private Function<Integer, Person> intToPerson = entier->{
     	Person personne = new Person();
     	personne.setFirstname("first_"+entier);
